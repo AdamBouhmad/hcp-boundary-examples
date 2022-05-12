@@ -1,5 +1,3 @@
-![](boundary.png)
-
 # Boundary Deployment Examples on HCP
 This directory contains an HCP deployment example for Boundary using Terraform. 
 
