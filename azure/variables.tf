@@ -14,6 +14,14 @@ variable "password" {
   type = string
 }
 
+variable "principal_client_id" {
+  type = string
+}
+
+variable "principal_client_secret" {
+  type = string
+}
+
 variable "oidc_issuer" {
   type = string
 }
