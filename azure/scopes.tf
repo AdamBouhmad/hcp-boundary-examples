@@ -18,18 +18,19 @@ resource "boundary_scope" "project" {
   auto_create_admin_role = true
 }
 
-resource "boundary_credential_store_vault" "database" {
-  name        = "database"
+resource "boundary_credential_store_vault" "cred_store" {
+  name        = "Cred Stores"
   description = "Northwind Credential Store"
   address     = var.vault_addr
   token       = var.vault_token
   scope_id    = boundary_scope.project.id
+  namespace   = "admin"
+  tls_skip_verify = true
 }
 
 resource "boundary_credential_library_vault" "database" {
-  name                = "Northwind"
-  description         = "Northwind Credential Library"
-  credential_store_id = boundary_credential_store_vault.database.id
-  path                = "database"
-  http_method         = "GET"
+  name                = "northwind_analyst"
+  description         = "Northwind Credential Library for DBAs"
+  credential_store_id = boundary_credential_store_vault.cred_store.id
+  path                = "database/"
 }
