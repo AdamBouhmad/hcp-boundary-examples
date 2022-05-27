@@ -14,14 +14,6 @@ variable "password" {
   type = string
 }
 
-variable "principal_client_id" {
-  type = string
-}
-
-variable "principal_client_secret" {
-  type = string
-}
-
 variable "oidc_issuer" {
   type = string
 }
@@ -35,5 +27,17 @@ variable "oidc_client_secret" {
 }
 
 variable "oidc_user_object_id" {
+  type = string
+}
+
+variable "admin_group_object_id" {
+  type = string
+}
+
+variable "user_group_object_id" {
+  type = string
+}
+
+variable "database_ip" {
   type = string
 }

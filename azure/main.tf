@@ -14,8 +14,3 @@ provider "boundary" {
   password_auth_method_password   = var.password
 }
 
-provider "hcp" {
-  client_id                       = var.principal_client_id
-  client_secret                   = var.principal_key_secret
-}
-
