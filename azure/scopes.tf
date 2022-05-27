@@ -17,3 +17,19 @@ resource "boundary_scope" "project" {
   scope_id               = boundary_scope.org.id
   auto_create_admin_role = true
 }
+
+resource "boundary_credential_store_vault" "database" {
+  name        = "database"
+  description = "Northwind Credential Store"
+  address     = var.vault_addr
+  token       = var.vault_token
+  scope_id    = boundary_scope.project.id
+}
+
+resource "boundary_credential_library_vault" "database" {
+  name                = "Northwind"
+  description         = "Northwind Credential Library"
+  credential_store_id = boundary_credential_store_vault.database.id
+  path                = "database"
+  http_method         = "GET"
+}
