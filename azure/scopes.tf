@@ -19,13 +19,12 @@ resource "boundary_scope" "project" {
 }
 
 resource "boundary_credential_store_vault" "cred_store" {
-  name        = "Cred Stores"
+  name        = "Cred Store1"
   description = "Northwind Credential Store"
   address     = var.vault_addr
   token       = var.vault_token
   scope_id    = boundary_scope.project.id
-  namespace   = "admin"
-  tls_skip_verify = true
+  namespace   = var.namespace
 }
 
 resource "boundary_credential_library_vault" "database" {

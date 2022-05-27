@@ -49,3 +49,7 @@ variable "vault_addr" {
 variable "vault_token" {
   type = string
 }
+
+variable "namespace" {
+  type = string
+}
