@@ -43,7 +43,6 @@ variable "database_ip" {
   type = string
 }
 
-<<<<<<< HEAD
 variable "vault_addr" {
   type = string
 }
@@ -55,7 +54,6 @@ variable "vault_token" {
 variable "namespace" {
   type = string
 }
-=======
 variable "subscription_id" {
   type = string
 }
@@ -75,4 +73,3 @@ variable "host_set_filter_value" {
 variable "azure_hosts_ip_cidrs" {
   type = list
 }
->>>>>>> 6d4e7a3 (added some variables for dynamic host set support)
