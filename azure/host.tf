@@ -15,7 +15,7 @@ resource "boundary_host_static" "demo_host" {
   name            = "Demo PostgreSQL Database"
   description     = "A Demo PostgreSQL Database"
   host_catalog_id = boundary_host_catalog_static.demo_catalog.id
-  address         = var.database_ip
+  address         = var.database_addr
 }
 
 resource "boundary_host_catalog_plugin" "azure_host_catalog" {
