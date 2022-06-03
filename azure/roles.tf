@@ -1,11 +1,3 @@
-resource "boundary_role" "admins_role" {
-  name          = "Admin Role"
-  description   = "Role for Boundary Admins"
-  principal_ids = [boundary_managed_group.admins_managed_group.id]
-  grant_strings = ["id=*;type=*;actions=*"]
-  scope_id      = boundary_scope.org.id
-}
-
 resource "boundary_role" "analysts_users_role" {
   name          = "Analysts Users Role"
   description   = "Overarching role to allow db analysts to see db resources"
