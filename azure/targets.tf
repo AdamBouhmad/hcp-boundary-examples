@@ -4,7 +4,10 @@ resource "boundary_target" "database_target" {
   type                     = "tcp"
   default_port             = "5432"
   session_connection_limit = -1
-  scope_id                 = boundary_scope.analysts_scope.id
+  application_credential_source_ids = [
+    boundary_credential_library_vault.database.id
+  ]
+  scope_id = boundary_scope.analysts_scope.id
   host_source_ids = [
     boundary_host_set_static.demo_host_set.id
   ]
