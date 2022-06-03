@@ -3,7 +3,7 @@ resource "boundary_auth_method_oidc" "azure_oidc_auth_method" {
   description          = "OIDC authentication method for Azure"
   scope_id             = boundary_scope.org.id
   is_primary_for_scope = true
-  issuer               = var.oidc_issuer
+  issuer               = "${var.oidc_issuer}/${var.azure_app_tenant_id}/"
   client_id            = var.oidc_client_id
   client_secret        = var.oidc_client_secret
   signing_algorithms   = ["RS256"]
