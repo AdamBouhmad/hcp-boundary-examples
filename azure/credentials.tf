@@ -4,7 +4,7 @@ resource "boundary_credential_store_vault" "cred_store" {
   address     = var.vault_addr
   token       = var.vault_token
   scope_id    = boundary_scope.analysts_scope.id
-  namespace   = var.namespace
+  namespace   = var.vault_namespace
 }
 
 resource "boundary_credential_library_vault" "database" {
