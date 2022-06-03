@@ -3,7 +3,7 @@ resource "boundary_credential_store_vault" "cred_store" {
   description = "Northwind Credential Store"
   address     = var.vault_addr
   token       = var.vault_token
-  scope_id    = boundary_scope.project.id
+  scope_id    = boundary_scope.analysts_scope.id
   namespace   = var.namespace
 }
 
