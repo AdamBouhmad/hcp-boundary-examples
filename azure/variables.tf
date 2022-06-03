@@ -68,7 +68,7 @@ variable "vault_token" {
   description = "An auth token for accessing a Vault cluster"
 }
 
-variable "namespace" {
+variable "vault_namespace" {
   type        = string
   description = "The namespace where the secrets engine is enabled within the Vault cluster"
 }
