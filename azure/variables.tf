@@ -53,9 +53,9 @@ variable "operations_group_object_id" {
   description = "The object ID of an Azure Active Directory Group for Operations employees"
 }
 
-variable "database_ip" {
+variable "database_addr" {
   type        = string
-  description = "The public IP of an Azure PostgreSQL database"
+  description = "The public IP or DNS name of an Azure PostgreSQL database"
 }
 
 variable "vault_addr" {
