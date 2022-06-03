@@ -44,7 +44,7 @@ resource "boundary_host_set_plugin" "azure_host_set" {
   description           = "A Dynamic Host Set for Microsoft Azure"
   host_catalog_id       = boundary_host_catalog_plugin.azure_host_catalog.id
   sync_interval_seconds = 10
-  preferred_endpoints   = var.azure_hosts_ip_cidrs
+  preferred_endpoints   = [var.azure_hosts_ip_cidr]
   attributes_json = jsonencode(
     {
       "filter" : "tagName eq '${var.host_set_filter_key}' and tagValue eq '${var.host_set_filter_value}'"
