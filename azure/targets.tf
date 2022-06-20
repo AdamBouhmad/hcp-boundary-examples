@@ -1,6 +1,6 @@
 resource "boundary_target" "database_target" {
-  name                     = "Demo Database Target"
-  description              = "A Demo Database Target"
+  name                     = "NorthWind Sales Database"
+  description              = "NorthWind Sales Postgres DB"
   type                     = "tcp"
   default_port             = "5432"
   session_connection_limit = -1
