@@ -11,3 +11,4 @@ resource "boundary_managed_group" "operations_managed_group" {
   auth_method_id = boundary_auth_method_oidc.azure_oidc_auth_method.id
   filter         = "\"${var.operations_group_object_id}\" in \"/token/groups\""
 }
+
